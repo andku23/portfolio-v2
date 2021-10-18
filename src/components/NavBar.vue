@@ -1,11 +1,11 @@
 <template>
     <div class = "nav-bar-container">
-        <Background background-color="#000000" opacity="0.5"/>
+        <Background background-color="#000000" opacity="0.7"/>
         <ul class = "nav-bar-desktop">
-            <li><a href="#">About</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Contact</a></li>
-            <li class = "home-logo"><a href="#">Home</a></li>
+            <li><a href="#"><h3>ABOUT</h3></a></li>
+            <li><a href="#"><h3>PROJECTS</h3></a></li>
+            <li><a href="#"><h3>CONTACT</h3></a></li>
+            <li class = "home-logo"><a href="#"><h3>HOME</h3></a></li>
         </ul>
     </div>
 </template>
@@ -40,11 +40,15 @@
                 grid-column: 5 / 6;
             }
             li {
-                background-color:red;
                 padding: 0 30px 0 30px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
+
+                &:hover{
+                    transition: all 0.2s linear;
+                    background-color: #888888;
+                }
             }
             a{
                 text-decoration: none;
