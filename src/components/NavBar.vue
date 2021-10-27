@@ -36,6 +36,8 @@
         position: fixed;
         width: 100%;
         height: 80px;
+        text-decoration: none;
+        top: 0;
 
         .nav-bar-desktop {
             @extend %absolute-fill;
