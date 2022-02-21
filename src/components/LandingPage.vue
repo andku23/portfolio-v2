@@ -9,6 +9,9 @@
         <AnimateOnVisible name="fadeUp" ::duration="1">
           <p>{{ user.status }}</p>
         </AnimateOnVisible>
+        <AnimateOnVisible name="fadeUp" ::duration="1">
+          <p>{{ user.email }}</p>
+        </AnimateOnVisible>
       </div>
     </div>
   </header>
@@ -32,7 +35,7 @@ export default {
 .parallax {
   background-image: url("../assets/img/bg.jpg");
   background-attachment: fixed;
-  background-position: center;
+  background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;

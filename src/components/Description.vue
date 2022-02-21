@@ -1,7 +1,7 @@
 <template>
     <section id="about">
         <AnimateOnVisible name="fadeDown" :duration="1">
-            <Title :title="content.metadata.title" :description="content.metadata.description" />
+            <Title :title="content.metadata.title" />
         </AnimateOnVisible>
 
         <AnimateOnVisible name="fadeRight" :duration="1">
@@ -11,11 +11,8 @@
                         <Photo :user="user"/>
                     </div>
                     <div class="row">
-                        <div class="col-md-7 mr-auto card-mobile">
+                        <div class="mr-auto card-mobile">
                             <Presentation :content="content"/>
-                        </div>
-                        <div class="col-md-4 card-mobile">
-                            <PersonnalCard :user="user" :links="links"/>
                         </div>
                     </div>
                 </div>
@@ -26,7 +23,6 @@
 
 <script>
     import Title from './Title.vue'
-    import PersonnalCard from './PersonnalCard.vue'
     import Presentation from './Presentation.vue'
     import Photo from './Photo.vue'
 
@@ -35,7 +31,6 @@
         props: ['user', 'content', 'links'],
         components: {
             Title,
-            PersonnalCard,
             Presentation,
             Photo
         },

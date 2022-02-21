@@ -2,9 +2,6 @@
   <div>
     <h3>{{ user.name }}</h3>
     <div class="data"><strong>E-mail:</strong> {{ user.email }}</div>
-    <div class="data"><strong>Phone:</strong> {{ user.phone }}</div>
-    <div class="data"><strong>City:</strong> {{ user.city }}</div>
-    <div class="data"><strong>Languages:</strong> {{ user.lang }}</div>
     <SocialBar :links="links"/>
   </div>
 </template>

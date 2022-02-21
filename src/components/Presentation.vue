@@ -1,8 +1,7 @@
 <template>
   <div class="paragraph">
-    <h3>{{content.metadata.pres_title}}</h3>
-    <div class="begin">{{content.metadata.pres_first}}</div>
-    <p>{{content.metadata.pres_second}}</p>
+    <h2 class="begin">{{content.metadata.pres_first}}</h2>
+    <h2>{{content.metadata.pres_second}}</h2>
   </div>
 </template>
 
@@ -18,6 +17,7 @@ export default {
 
     .paragraph {
         color: map-get($colors, primary);
+        margin: 5%;
         .begin {
             color: map-get($colors, secondary);
         }
