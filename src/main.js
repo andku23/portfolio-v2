@@ -1,21 +1,30 @@
-import { createApp } from 'vue';
-import router from "./router";
-import store from "./store";
+import Vue from 'vue'
+import BootstrapVue from 'bootstrap-vue';
 import App from './App.vue'
-import Background from './components/background';
 
-import { updateCssVariables } from './utils';
+import AnimateOnVisible from "./components/AnimateOnVisible.vue"
 
-const app = createApp(App)
-	.use(store)
-	.use(router);
+Vue.use(BootstrapVue)
 
-const Vue = app;
-Vue.component('Background', Background);
+import VueTimeline from "@growthbunker/vuetimeline";
 
+Vue.use(VueTimeline);
 
-app.mount('#app');
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faCopyright} from '@fortawesome/free-solid-svg-icons'
+import { faFacebookSquare, faInstagramSquare, faLinkedin, faGithubSquare } from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-window.addEventListener("resize", () => {
-	updateCssVariables();
-});
+library.add(faCopyright, faFacebookSquare, faInstagramSquare, faLinkedin, faGithubSquare)
+
+Vue.component('font-awesome-icon', FontAwesomeIcon)
+Vue.component('AnimateOnVisible', AnimateOnVisible)
+Vue.config.productionTip = false
+
+new Vue({
+  render: h => h(App),
+}).$mount('#app')
+
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+import './styles/global.scss'

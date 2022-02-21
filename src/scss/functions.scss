@@ -1,9 +1,0 @@
-@function vh($amt){
-  @return calc(var(--vh) * #{$amt});
-}
-
-@function rem($px){
-  $px : $px + 0px;
-  $remSize: $px / $base-font-size;  //This lives in settings.scss
-  @return #{$remSize}rem;
-}
