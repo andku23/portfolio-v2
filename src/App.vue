@@ -3,9 +3,7 @@
     <div class="wrapper" v-if="isLoaded" id="app">
       <LandingPage :user="user" />
       <Description :user="user" :content="findSlug('description')" :links="findSlug('links')" />
-      <Experience :content="findSlug('experiences')" />
       <Skills :content="findSlug('skills')" />
-      <Projects :content="findSlug('projects')" />
       <Footer :user="user" :links="findSlug('links')" />
     </div>
   </transition>
@@ -13,23 +11,19 @@
 
 <script>
 import LandingPage from "./components/LandingPage.vue";
-import Description from "./components/Description.vue";
-import Experience from "./components/Experience.vue";
-import Skills from "./components/Skills.vue";
-import Projects from "./components/Projects.vue";
 import Footer from "./components/Footer.vue";
 
 import { bucket } from "./cosmic.js";
+import Description from "./components/Description";
+import Skills from "./components/Skills";
 
 export default {
   name: "App",
   components: {
-    LandingPage,
     Description,
-    Experience,
-    Skills,
-    Projects,
+    LandingPage,
     Footer,
+    Skills
   },
   data: () => ({
     isLoaded: false,

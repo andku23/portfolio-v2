@@ -1,9 +1,8 @@
 <template>
-  <footer class="footer">
+  <footer class="footer" :class="{isHidden: !isVisible}">
     <div>
-        <font-awesome-icon class="copyright-icon" icon="copyright"/> 
-        2020 {{user.name}}
-        | Get this template <a href="https://github.com/hbollon/portfolio-vuejs" target="_blank">here</a> ! 
+        <font-awesome-icon class="copyright-icon" icon="copyright"/>
+        2022 {{user.name}}
     </div>
     <SocialBar :links="links"/>
   </footer>
@@ -17,6 +16,16 @@ export default {
   components: {
     SocialBar,
   },
+  data: function(){
+    return {
+      isVisible: false
+    }
+  },
+  mounted(){
+    setTimeout(()=>{
+      this.isVisible = true;
+    }, 2000);
+  }
 }
 </script>
 
@@ -26,12 +35,23 @@ export default {
   $bg-footer: map-get($colors, primary) !default;
 
   .footer {
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    bottom: 0;
+    transition: all 0.5s;
+
     padding: 10px 20px 10px 20px;
     background-color: $bg-footer;
-    color: map-get($colors, light);
+    color: whitesmoke;
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  .isHidden{
+    bottom: -50px;
+    opacity: 0;
   }
 
   .copyright-icon{

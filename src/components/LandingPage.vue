@@ -10,17 +10,27 @@
           <p>{{ user.status }}</p>
         </AnimateOnVisible>
         <AnimateOnVisible name="fadeUp" ::duration="1">
-          <p>{{ user.email }}</p>
+            <p class = "under-construction">Site Under Construction...</p>
+          <div class = "loader-flex">
+            <HeartLoader class="loader" :color="'#7BD389'" size="40"/>
+
+          </div>
         </AnimateOnVisible>
+
       </div>
     </div>
   </header>
 </template>
 
 <script>
+import {HeartLoader} from 'vue-spinners-css';
+
 export default {
   name: "LandingPage",
-  props: ["user"]
+  props: ["user"],
+  components: {
+    HeartLoader
+  }
 };
 </script>
 
@@ -33,7 +43,7 @@ export default {
 }
 
 .parallax {
-  background-image: url("../assets/img/bg.jpg");
+  background-color: map-get($colors, dark);
   background-attachment: fixed;
   background-position: bottom;
   background-repeat: no-repeat;
@@ -50,8 +60,15 @@ export default {
   margin: 0 auto;
   z-index: 400;
 
+  .profile-image{
+    width: auto;
+    height: 100px;
+    border-radius: 50%;
+  }
+
   .wrapper-name {
-    width: 250px;
+    width: 300px;
+    height: fit-content;
   }
 
   h1 {
@@ -67,17 +84,38 @@ export default {
     text-align: center;
     margin: 5px auto;
     color: whitesmoke;
+
+
+  }
+
+  .under-construction{
+    color: grey;
+    font-size: 1.5rem;
+    margin: 0;
+    height: auto;
+
+  }
+
+  .loader-flex{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .loader{
+    position: relative;
   }
 
   hr {
-    border: 1px solid whitesmoke;
+    border: 1px solid map-get($colors, light);
+    width: 60%;
   }
 }
 
 @media (min-width: #{map-get($breakpoints, small)}) {
   .name {
     .wrapper-name {
-      width: 55%;
     }
     h1 {
       font-size: 2.8rem;
@@ -91,7 +129,6 @@ export default {
 @media (min-width: #{map-get($breakpoints, medium)}) {
   .name {
     .wrapper-name {
-      width: 450px;
     }
     h1 {
       font-size: 4rem;

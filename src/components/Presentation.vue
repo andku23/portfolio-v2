@@ -1,6 +1,7 @@
 <template>
   <div class="paragraph">
     <h2 class="begin">{{content.metadata.pres_first}}</h2>
+    <br>
     <h2>{{content.metadata.pres_second}}</h2>
   </div>
 </template>
@@ -16,7 +17,8 @@ export default {
     @import '@/styles/constants.scss';
 
     .paragraph {
-        color: map-get($colors, primary);
+        text-indent: 5%;
+        color: map-get($colors, complementary);
         margin: 5%;
         .begin {
             color: map-get($colors, secondary);

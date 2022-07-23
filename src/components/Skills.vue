@@ -1,7 +1,7 @@
 <template>
     <section id="skills">
         <AnimateOnVisible name="fadeDown" :duration="1">
-            <Title :title="content.metadata.title" :description="content.metadata.description" />
+            <h2 class = "title">SKILLS</h2>
         </AnimateOnVisible>
 
         <div class="section-content">
@@ -20,12 +20,10 @@
 </template>
 
 <script>
-    import Title from './Title.vue'
 
     export default {
         name: 'Skills',
         components: {
-            Title,
         },
         props: ['content'],
         methods: {
@@ -40,13 +38,21 @@
     @import '@/styles/constants.scss';
 
     #skills {
-        background-color: lighten(map-get($colors, dark), 100%);
+        background-color: map-get($colors, dark);
+    }
+
+    .title{
+      text-align: center;
+      color: whitesmoke;
+      font-size: 4rem;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
     }
 
     @media(min-width: #{map-get($breakpoints, medium)}) {
         .section-content {
             width: 80%;
-            margin: 0 auto;
+            margin: 0 auto 50px auto;
         }
     }
 
@@ -55,7 +61,7 @@
     }
 
     .altCaption{
-        color: map-get($colors, secondary);
+        color: whitesmoke;
         margin-top: 1rem;
     }
 </style>
