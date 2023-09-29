@@ -2,13 +2,6 @@
   <div class="social-wrap">
     <ul class = "social-flex">
       <li>
-        <a href="/Resume_Andrew.pdf" target="_blank">
-         <div class = "resume">
-            RESUME
-         </div>
-        </a>
-      </li>
-      <li>
         <a :href="links.metadata.linkedin" target="_blank">
           <font-awesome-icon class="icon" :icon="['fab', 'linkedin']" />
         </a>
